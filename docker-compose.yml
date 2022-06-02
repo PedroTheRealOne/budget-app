@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: budget-app
+    stdin_open: true
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/project
+      - gems:/.gems
+volumes:
+  gems:
