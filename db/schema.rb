@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_02_205313) do
+ActiveRecord::Schema.define(version: 2022_06_02_223332) do
 
   create_table "transaction_types", force: :cascade do |t|
     t.string "name", null: false
@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 2022_06_02_205313) do
     t.float "value", default: 0.0, null: false
     t.string "descriprion", default: "", null: false
     t.datetime "transaction_date", null: false
-    t.integer "transaction_id"
+    t.integer "transaction_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "transactions", "transaction_types"
 end

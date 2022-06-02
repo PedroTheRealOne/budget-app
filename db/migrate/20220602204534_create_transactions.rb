@@ -4,10 +4,8 @@ class CreateTransactions < ActiveRecord::Migration[6.1]
       t.float :value, null: false, default: 0
       t.string :descriprion, null: false, default: ""
       t.datetime :transaction_date, null: false
-      t.integer :transaction_id
+      t.integer :transaction_type_id
       t.timestamps
     end
-
-    add_foreign_key :transactions, :transaction_types
   end
 end
