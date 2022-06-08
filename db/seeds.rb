@@ -1,6 +1,6 @@
 # Transaction Type seeds
-entrada = TransactionType.find_by_or_create(name: "Entrada")
-saida = TransactionType.find_by_or_create(name: "Saída")
+entrada = TransactionType.find_or_create_by(name: "Entrada")
+saida = TransactionType.find_or_create_by(name: "Saída")
 
 # Transaction example seeds
 Transaction.create(value: 29.99, descriprion: "Lanchão", transaction_date: DateTime.parse("09/01/2022 17:00"), transaction_type: entrada)
