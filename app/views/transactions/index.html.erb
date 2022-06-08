@@ -1,7 +1,7 @@
 <div class = "container">
-  <%= link_to "Some Page", root_path %>
+  <%= link_to "Página inicial", root_path %>
   <h1> Suas transações </h1>
-  <%= link_to 'Nova transação', new_transaction_path, :class => "btn btn-primary btn-sm" %>
+  <%= link_to 'Nova transação', new_transaction_path, class: "btn btn-primary btn-sm" %>
   <table class = "table">
     <thead>
       <tr>
@@ -16,11 +16,11 @@
       <% @transactions.each do |transaction|%>
         <tr>
           <td><%= transaction.id %></td>
-          <td><%= number_to_currency(transaction.value, :unit => "R$", :delimiter => ".", :separator => ",") %></td>
+          <td><%= number_to_currency(transaction.value, unit: "R$", delimiter: ".", separator: ",") %></td>
           <td><%= transaction.descriprion %></td>
-          <td><%= transaction.transaction_type.name %></td>
+          <td><%= transaction.transaction_type %></td>
           <td>
-            <%= link_to 'Detalhes',transaction_path(transaction.id), :class => "btn btn-info btn-sm" %>
+            <%= link_to 'Detalhes',transaction, class: "btn btn-info btn-sm" %>
             <button type="button" class="btn btn-warning btn-sm">Editar</button>
             <button type="button" class="btn btn-danger btn-sm">Excluir</button>
           </td>

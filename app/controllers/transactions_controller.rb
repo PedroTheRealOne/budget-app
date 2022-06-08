@@ -1,4 +1,4 @@
-class TransactionController < ApplicationController
+class TransactionsController < ApplicationController
     # GET /transactions
     def index
         @transactions = Transaction.all
