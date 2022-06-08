@@ -1,0 +1,11 @@
+<%= link_to "Voltar para todas as transações", transactions_path %>
+<div class = "container">
+  <h1> <%= "Detalhes da transação: #{@transaction.id}" %> </h1>
+  <ul>
+    <li> <%= "ID: #{@transaction.id}" %> </li>
+    <li> <%= "Valor: #{number_to_currency(@transaction.value, :unit => "R$", :delimiter => ".", :separator => ",")}" %> </li>
+    <li> <%= "Descrição: #{@transaction.descriprion}" %> </li>
+    <li> <%= "Data: #{@transaction.transaction_date}" %> </li>
+    <li> <%= "Tipo da transação: #{@transaction.transaction_type.name}" %> </li>
+  </ul>
+</div>

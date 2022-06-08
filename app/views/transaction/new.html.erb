@@ -1,0 +1,11 @@
+<%= link_to "Voltar para todas as transações", transactions_path %>
+<h1>Adicionar nova transação</h1>
+<div class = "container">
+  <%= simple_form_for @transaction do |f| %>
+    <%= f.input :value, as: :currency %>
+    <%= f.input :descriprion %>
+    <%= f.input :transaction_date %>
+    <%= f.input :transaction_type_id %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

@@ -6,6 +6,7 @@ class TransactionController < ApplicationController
 
     # GET /transactions/:id
     def show
+        @transaction = Transaction.find(params[:id])
     end
 
     # GET /transactions/new
