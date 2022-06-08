@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # Home
+  root to: " home#index"
+  get '/', controller: :home, action: :index
+
+  # Transactions
+  get '/transactions', controller: :transaction, action: :index, as: :transaction
 end
