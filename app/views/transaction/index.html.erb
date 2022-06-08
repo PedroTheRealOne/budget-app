@@ -11,12 +11,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>0</td>
-        <td>R$10,00</td>
-        <td>EXEMPLO</td>
-        <td>Saida</td>
-      </tr>
+      <% @transactions.each do |transaction|%>
+        <tr>
+          <td>transaction.id</td>
+          <td>transaction.value</td>
+          <td>transaction.descriprion</td>
+          <td>transaction.transaction_type_id</td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>
