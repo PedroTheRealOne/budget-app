@@ -1,0 +1,11 @@
+<%= link_to "Voltar para todas as transações", transactions_path %>
+<div class = "container">
+  <h1>Editar transação</h1>
+  <%= simple_form_for @transaction do |f| %>
+    <%= f.input :value, as: :currency %>
+    <%= f.input :descriprion %>
+    <%= f.input :transaction_date, as: :date , html5: true%>
+    <%= f.association :transaction_type, include_blank: false %>
+    <%= f.button :submit, "Editar", class: "btn btn-primary" %>
+  <% end %>
+</div>
