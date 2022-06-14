@@ -2,8 +2,8 @@
 <div class = "container">
   <h1>Adicionar nova transação</h1>
   <%= simple_form_for @transaction do |f| %>
-    <%= f.input :value, as: :currency %>
-    <%= f.input :descriprion %>
+    <%= f.input :value, as: :currency, label: "Valor" %>
+    <%= f.input :description %>
     <%= f.input :transaction_date, as: :date , html5: true%>
     <%= f.association :transaction_type, include_blank: false %>
     <%= f.button :submit, "Salvar", class: "btn btn-primary" %>

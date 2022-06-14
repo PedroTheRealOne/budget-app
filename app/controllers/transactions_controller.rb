@@ -7,7 +7,6 @@ class TransactionsController < ApplicationController
 
     # GET /transactions/:id
     def show
-        @transaction = Transaction.find(params[:id])
     end
 
     # GET /transactions/new
@@ -17,7 +16,6 @@ class TransactionsController < ApplicationController
 
       # GET /transactions/:id/edit
      def edit
-        @transaction = Transaction.find(params[:id])
      end
 
     # POST /transactions
@@ -53,7 +51,7 @@ class TransactionsController < ApplicationController
         @transaction.destroy
 
         respond_to do |format|
-            format.html { redirect_to transaction_url, notice: "A transação foi excluida com sucesso" }
+            format.html { redirect_to transactions_url, notice: "A transação foi excluida com sucesso" }
             format.json { head :no_content }
         end
     end
@@ -64,7 +62,7 @@ class TransactionsController < ApplicationController
     end
 
     def transaction_params
-        params.require(:transaction).permit(:value, :descriprion, :transaction_date, :transaction_type_id)
+        params.require(:transaction).permit(:value, :description, :transaction_date, :transaction_type_id)
     end
 
 end

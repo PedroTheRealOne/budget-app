@@ -15,10 +15,10 @@
     </thead>
     <tbody>
       <% @transactions.each do |transaction|%>
-        <tr>
+        <tr class = "<%= transaction_class(transaction) %>">
           <td><%= transaction.id %></td>
-          <td><%= number_to_currency(transaction.value, unit: "R$", delimiter: ".", separator: ",") %></td>
-          <td><%= transaction.descriprion %></td>
+          <td><%= number_to_currency(transaction.value) %></td>
+          <td><%= transaction.description %></td>
           <td><%= transaction.transaction_date.strftime("%d/%m/%Y")  %></td>
           <td><%= transaction.transaction_type %></td>
           <td>

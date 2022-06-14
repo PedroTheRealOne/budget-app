@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_06_02_223332) do
 
   create_table "transactions", force: :cascade do |t|
     t.float "value", default: 0.0, null: false
-    t.string "descriprion", default: "", null: false
+    t.string "description", default: "", null: false
     t.datetime "transaction_date", null: false
     t.integer "transaction_type_id"
     t.datetime "created_at", precision: 6, null: false
