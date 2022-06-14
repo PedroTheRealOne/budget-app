@@ -4,7 +4,7 @@
   <%= simple_form_for @transaction do |f| %>
     <%= f.input :value, as: :currency %>
     <%= f.input :descriprion %>
-    <%= f.input :transaction_date %>
+    <%= f.input :transaction_date, as: :date , html5: true%>
     <%= f.association :transaction_type, include_blank: false %>
     <%= f.button :submit, "Salvar", class: "btn btn-primary" %>
   <% end %>
