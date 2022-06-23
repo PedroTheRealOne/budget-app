@@ -1,9 +1,13 @@
 <div class = "container">
-  <h1> Home page </h1>
+  <h1> Bem vindo! </h1>
   <div class="row">
     <div class="col-md-4">
       <div class="card-body">
-        <%= link_to "Transações" , transactions_path %>
+        <% if user_signed_in? %>
+          <%= link_to "Transações" , transactions_path %>
+        <% else %>
+          <a href="users/sign_in">Cadastrar-se</a>
+        <% end %>
       </div>
     </div>
   </div>

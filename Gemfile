@@ -11,6 +11,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'simple_form', '~> 5.1'
+gem 'devise'
 gem 'rails-i18n'
 
 group :development, :test do
@@ -23,6 +24,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'sqlite3', '~> 1.4'
   gem 'spring'
+  gem 'letter_opener'
 end
 
 group :production do
