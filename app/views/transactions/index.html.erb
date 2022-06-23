@@ -2,6 +2,7 @@
   <%= link_to "Página inicial", root_path %>
   <h1> Suas transações </h1>
   <%= link_to 'Nova transação', new_transaction_path, class: "btn btn-primary btn-sm" %>
+  <h3 class = "p16" >Saldo disponível: <%=number_to_currency(transaction_budget_avaliable(@transactions))%></h3>
   <table class = "table">
     <thead>
       <tr>
