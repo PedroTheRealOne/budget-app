@@ -4,7 +4,8 @@ class TransactionsController < ApplicationController
 
     # GET /transactions
     def index
-        @transactions = Transaction.all
+        @transactions = Transaction.filter_transaction(current_user.transactions, params)
+        @trasaction_types = TransactionType.all
     end
 
     # GET /transactions/:id
@@ -13,7 +14,7 @@ class TransactionsController < ApplicationController
 
     # GET /transactions/new
     def new
-        @transaction = Transaction.new
+        @transaction = current_user.transactions.new
     end
 
       # GET /transactions/:id/edit
@@ -23,7 +24,6 @@ class TransactionsController < ApplicationController
     # POST /transactions
     def create
         @transaction = current_user.transactions.build(transaction_params)
-        #@transaction = Transaction.new(transaction_params)
 
         respond_to do |format|
             if @transaction.save
@@ -61,7 +61,7 @@ class TransactionsController < ApplicationController
 
     private
     def set_transaction
-        @transaction = Transaction.find(params[:id])
+        @transaction = current_user.transactions.find(params[:id])
     end
 
     def transaction_params
