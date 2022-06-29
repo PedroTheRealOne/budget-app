@@ -4,7 +4,14 @@
 </div>
 <h1> Suas transações </h1>
 <%= link_to 'Nova transação', new_transaction_path, class: "btn btn-primary btn-sm" %>
-<h3 class = "p16" >Saldo disponível: <%=number_to_currency(transaction_budget_avaliable(@transactions))%></h3>
+<div class = "row align-items-center">
+  <div class = "col-md-4">
+    <h3 class = "p16" >Saldo disponível: <%=number_to_currency(transaction_budget_avaliable(@no_filter_transactions))%></h3>
+  </div>
+  <div class = "col-md-4">
+    <h5 class = "p12" >Total das transações filtradas: <%=number_to_currency(transaction_budget_avaliable(@transactions))%></h5>
+  </div>
+</div>
 <%= simple_form_for :search, method: :get do |f| %>
   <div class = "row align-items-end">
     <div class = "col">

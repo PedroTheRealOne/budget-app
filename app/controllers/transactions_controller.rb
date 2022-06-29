@@ -5,6 +5,7 @@ class TransactionsController < ApplicationController
     # GET /transactions
     def index
         @transactions = Transaction.filter_transaction(current_user.transactions, params)
+        @no_filter_transactions = current_user.transactions
         @trasaction_types = TransactionType.all
     end
 
