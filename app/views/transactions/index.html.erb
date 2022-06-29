@@ -14,7 +14,7 @@
       <%= f.input :end_date, input_html: {value: params.dig(:search, :end_date)&.to_date}, as: :date, html5: true %>
     </div>
     <div class = "col">
-      <%= f.input :transaction_type, collection: @trasaction_types, include_blank: false %>
+      <%= f.input :transaction_type, collection: @trasaction_types, include_blank: "Todas as transações" %>
     </div>
     <div class = "col">
       <%= f.submit 'Filtrar', class: "btn btn-secondary"%>
