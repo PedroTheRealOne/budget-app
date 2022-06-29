@@ -1,7 +1,9 @@
 class Transaction < ApplicationRecord
     validates :value, :description, :transaction_date, :transaction_type_id, presence: true
     validate :date_validation
+    
     belongs_to :transaction_type
+    belongs_to :user
 
     private
 

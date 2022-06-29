@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_23_201849) do
+ActiveRecord::Schema.define(version: 2022_06_29_163950) do
 
   create_table "transaction_types", force: :cascade do |t|
     t.string "name", null: false
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_201849) do
     t.string "description", default: "", null: false
     t.datetime "transaction_date", null: false
     t.integer "transaction_type_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,4 +41,5 @@ ActiveRecord::Schema.define(version: 2022_06_23_201849) do
   end
 
   add_foreign_key "transactions", "transaction_types"
+  add_foreign_key "transactions", "users"
 end

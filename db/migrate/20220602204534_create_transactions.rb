@@ -5,6 +5,7 @@ class CreateTransactions < ActiveRecord::Migration[6.1]
       t.string :description, null: false, default: ""
       t.datetime :transaction_date, null: false
       t.integer :transaction_type_id
+      t.integer :user_id
       t.timestamps
     end
   end
